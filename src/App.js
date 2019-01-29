@@ -1,77 +1,10 @@
-// import React, {Component} from 'react';
-// import Table from './Table';
-//
-// class App extends Component {
-//   state = {
-//     characters: [
-//       {
-//         'name': 'Tamara',
-//         'job': 'Seamstress'
-//       },
-//       {
-//         'name': 'Mac',
-//         'job': 'Ethical hacker'
-//       },
-//       {
-//         'name': 'Lily',
-//         'job': 'Master herbalist'
-//       },
-//       {
-//         'name': 'Dylan',
-//         'job': 'Bartender'
-//       }
-//     ]
-//   };
-//
-//   removeCharacter = index => {
-//     const { characters } = this.state;
-//
-//     this.setState({
-//       characters: characters.filter((character, i) => {
-//         return i !== index;
-//       })
-//     });
-//   }
-//
-// render() {
-//   const { characters } = this.state;
-// }
-//
-//       return (
-//         <div className="container">
-//           <Table
-//             characterData={characters}
-//             removeCharacter={this.removeCharacter}
-//           />
-//         </div>
-//     );
-// }
-//
-// export default App;
-
 import React, { Component } from 'react';
 import Table from './Table';
+import Form from './Form';
 
 class App extends Component {
     state = {
-        characters: [
-                {
-                  'name': 'Tamara',
-                  'job': 'Seamstress'
-                },
-                {
-                  'name': 'Mac',
-                  'job': 'Ethical hacker'
-                },
-                {
-                  'name': 'Lily',
-                  'job': 'Master herbalist'
-                },
-                {
-                  'name': 'Dylan',
-                  'job': 'Bartender'
-                }
-        ]
+        characters: []
     };
 
     removeCharacter = index => {
@@ -99,6 +32,8 @@ class App extends Component {
                     characterData={characters}
                     removeCharacter={this.removeCharacter}
                 />
+                <h3>Add New</h3>
+                <Form handleSubmit={this.handleSubmit} />
             </div>
         );
     }
