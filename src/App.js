@@ -1,26 +1,31 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
+import Table from './Table';
 
 class App extends Component {
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      const characters = [
+        {
+          'name': 'Tamara',
+          'job': 'Seamstress'
+        },
+        {
+          'name': 'Mac',
+          'job': 'Ethical hacker'
+        },
+        {
+          'name': 'Lily',
+          'job': 'Master herbalist'
+        },
+        {
+          'name': 'Dylan',
+          'job': 'Bartender'
+        }
+      ];
+
+      return (
+        <div className="container">
+          <Table characterData={characters} />
+        </div>
     );
   }
 }
